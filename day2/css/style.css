@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes slideIn{
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+.title{
+    text-align: center;
+    margin: 10px;
+    position: relative;
+    animation: slideIn 1s ease-in;
+}
+
+.title:active{
+    transform: translateX(-10px);
+}
+
+.title::before{
+    content: "";
+    background-color: red;
+    width: 177px;
+    height: 2px;
+    position: absolute;
+    top: 47%;
+    left: 23%;
+}
+
+.title::after{
+    content: "";
+    background-color: red;
+    width: 177px;
+    height: 2px;
+    position: absolute;
+    top: 47%;
+    right: 23%;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    height: 70vh;
+}
+
+@keyframes slideFade{
+    0% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.card{
+    background-color: aqua;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    text-align: center;
+    align-content: center;
+    position: relative;
+    transition: transform 0.3s ease;
+    animation: slideFade 1s ease-in;
+}
+
+.card::before{
+    content: "😂😎⚡️";
+    background-color: red;
+    padding: 5px 20px;
+    border-radius: 20px;
+    position: absolute;
+    top: 1%;
+    left: -10%;
+    transform: rotate(-30deg);
+}
+
+.card::after{
+    content: "$5,000 ⚡️";
+    background-color: greenyellow;
+    padding: 5px 20px;
+    border-radius: 20px;
+    position: absolute;
+    top: 80%;
+    right: -10%;
+}
+
+.card:hover{
+    transform: scale(1.1) rotate(20deg);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+input{
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+}
+
+input:focus-within{
+    background-color: rgb(249, 170, 170);
+    color: white;
+    border: 3px solid greenyellow;
+    font-weight: 700;
+    box-shadow: 0px 10px 20px greenyellow;
+}
+
+.lists{
+    display: flex; 
+    justify-content: center;
+    list-style: none;
+    margin-top: 30px;
+    gap: 30px;
+}
+
+.lists li:first-child{
+    color: red;
+}
+
+.lists li:last-child{
+    color: yellow;
+}
+
+.lists li:nth-child(2){
+    color: blue;
+}
+
+.lists li:nth-child(3){
+    color: green;
+}
+
+@keyframes spinner{
+    0%{
+        transform: rotate(0);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.spinner{
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px solid rgb(196, 201, 187);
+    border-top: 4px solid rgb(64, 64, 68);
+    animation: spinner 0.5s linear infinite;
+}
