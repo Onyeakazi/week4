@@ -1,0 +1,173 @@
+@keyframes slideIn{
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+.title{
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+    animation: slideIn 1.5s ease-in;
+}
+
+.title:active{
+    transform: translateY(-10px);
+}
+
+.title::before{
+    content: "";
+    background-color: red;
+    width: 200px;
+    height: 2px;
+    position: absolute;
+    top: 55%;
+    left: 25%;
+}
+
+.title::after{
+    content: "";
+    background-color: green;
+    width: 200px;
+    height: 2px;
+    position: absolute;
+    top: 55%;
+    right: 25%;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+@keyframes slideUp{
+    0%{
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.container div{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border-radius: 20px;
+    transition: transform 1s ease-in;
+    animation: slideUp 2s ease-in;
+}
+
+.container div:nth-child(1){
+    background-color: aquamarine;
+}
+
+.container div:nth-child(2){
+    background-color: red;
+}
+
+.container div:nth-child(3){
+    background-color: black;
+}
+
+.container div:hover{
+    transform: rotate(180deg);
+    background-color: chocolate;
+}
+
+.container div::before{
+    content: "😂💔✅";
+    background-color: red;
+    padding: 5px 15px;
+    border-radius: 20px;
+    position: absolute;
+    top: 2%;
+    left: -5%;
+    transform: rotate(-40deg);
+}
+
+.container div::after{
+    content: "";
+    background-color: rgb(33, 22, 182);
+    padding: 5px 15px;
+    height: 100px;
+    width: 90px;
+    border-radius: 50%;
+    position: absolute;
+    top: 80%;
+    right: -5%;
+}
+
+@keyframes slideDown{
+    0%{
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.input{
+    display: block;
+    margin: 0 auto;
+    margin-top: 1rem;
+    width: 250px;
+    height: 30px;
+    outline: none;
+    border-radius: 20px;
+    border: 2px solid gray;
+    padding: 0 20px;
+    transition: box-shadow 0.3s ease-in;
+    animation: slideDown 2s ease-in;
+}
+
+.input:focus{
+    background-color: greenyellow;
+    color: white;
+    box-shadow: 0 10px 20px green;
+    border: 2px solid greenyellow;
+}
+
+ol li:first-child{
+    color: orange;
+}
+
+ol li:last-child{
+    color: green;
+}
+
+ol li:nth-child(2){
+    color: red;
+}
+
+ol li:nth-child(3){
+    color: blue;
+}
+
+@keyframes spinner{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.spinner{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: 80px;
+    border: 5px solid rgb(251, 250, 250);
+    border-top: 5px solid gray;
+    animation: spinner 0.4s linear infinite;
+}
